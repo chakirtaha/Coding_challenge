@@ -19,3 +19,18 @@ variable "az1" {
 variable "az2" {
   default = "eu-central-1b"
 }
+variable "landing_zone_providers" {
+  default ={
+    account_id = "123456789012"
+    region     = "us-east-1"
+  }
+variable "landing_zone_components" {
+  default =
+  landing_zone_vpc = "s3://terraform-aws-landing-zone/components/landing_zone_vpc/*"
+}
+variable "terraform_backend" {
+  default = {
+    backend = "local"
+    path    = "/tmp/.terrahub/landing_zone"
+  }
+}
